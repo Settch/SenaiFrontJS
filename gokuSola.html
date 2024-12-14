@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GokuSola</title>
+</head>
+
+<body>
+
+    <h1>
+        Se cadastre para lutar com o Goku!!!
+    </h1>
+    <hr>
+    <br>
+
+    <form>
+        <label for="nomeLenda">Nome da lenda:</label>
+        <input type="text" placeholder="Digite..." id="nomeLenda">
+
+        <label for="idadePrince">Idade do princeso:</label>
+        <input type="text" placeholder="Digite..." id="idadePrince">
+
+        <label for="celular">Se seu celular fosse idade quanto você teria?</label>
+        <input type="text" placeholder="Digite.." id="celular">
+
+        <button type="button" id="btn-enviarCadastro">Encare a Verdade</button>
+    </form>
+
+    <div id="lista-info"></div>
+
+</body>
+
+<script>
+    const btnEnviar = document.getElementById("btn-enviarCadastro");
+
+    btnEnviar.addEventListener("click", criarCadastro);
+
+    function criarCadastro() {
+        
+        const nomeLenda = document.getElementById("nomeLenda");
+        const idadePrince = document.getElementById("idadePrince");
+        const celular = document.getElementById("celular");
+
+        const listaInfo = document.getElementById("lista-info");
+
+        const divP = document.createElement("p");
+        divP.textContent = nomeLenda.value + " - " + idadePrince.value + " - " + celular.value;
+
+        listaInfo.appendChild(divP);
+
+
+        /*          console.log({
+                    nome: nomeLenda.value,
+                    idade: idadePrince.value,
+                    celular: celular.value, 
+                })  */
+
+    }
+</script>
+
+</html>
